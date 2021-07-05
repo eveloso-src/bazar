@@ -1,0 +1,2 @@
+insert into product (id, description, price, title, status) values (1, 'Zapatillas Rojas en tela de avion', 1234.56, 'Zapatillas Adidas', 1)
+insert into product (id, description, price, title, status) values (2, 'Remera algodon', 1234.56, 'Remera deportiva Adidas', 1)
