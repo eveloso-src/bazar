@@ -48,13 +48,22 @@
 				<!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 			</div>
 
+
+
 			<nav class="nav-menu float-right d-none d-lg-block">
 				<ul>
-					<li><a href="portfolio.html">
-
-							<div class="icon-box icon-box-pink"></div>
-
-					</a></li>
+					<li>
+						<form 
+						th:action="@{/search}"
+						th:object="${searchForm}" method="post" class="form-horizontal"
+						role="form">
+							<input class="rounded marginTop" th:field="*{keyphrase}" type="text" id="searchInput"/>	
+							<span class="icon">
+								<i class="bx bx-search-alt-2 white"></i>
+								
+							</span>
+						</form>
+					</li>
 
 					<li class="active"><a href="index.html">Home</a></li>
 					<li><a href="about.html">Acerca de </a></li>
@@ -328,6 +337,7 @@
 
 	<!-- Template Main JS File -->
 	<script src="assets/js/main.js"></script>
+	
 
 </body>
 

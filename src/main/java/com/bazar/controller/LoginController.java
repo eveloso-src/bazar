@@ -4,10 +4,11 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
+import com.bazar.model.SearchForm;
 import com.bazar.repository.ProductRepository;
 
 @Controller
@@ -17,10 +18,10 @@ public class LoginController {
 	ProductRepository productRepository;
 
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
-	public ModelAndView login(HttpServletRequest request) {
-		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("index");
-		modelAndView.addObject("products", productRepository.findAll());
-		return modelAndView;
+	public String login(Model model, HttpServletRequest request) {
+		model.addAttribute("searchForm", new SearchForm());
+		model.addAttribute("products", productRepository.findAll());
+		return "index";
 	}
+
 }
