@@ -200,20 +200,22 @@
 				<div class="row">
 
 
-					<div th:each="productItem : ${products}" class="col-md-3 col-lg-3 d-flex "
+					<div th:each="productItem : ${products}" class="col-md-3 col-lg-4 d-flex "
 						data-aos="fade-up" data-aos-delay="200">
-						<div class="icon-box icon-box-blue">
+						<div class="icon-box icon-box-blue w-100">
 							<div class="right">
 								<a href="#"><i class='bx bx-heart'></i></a>
 							</div>
 							<div class="row">
-								<div class="imagen-item col-12"></div>
-								<div class="col-10">
-									<h5 class="title-item">
-										<a href="" th:text="${productItem.title}"></a>
-									</h5>
-									<p class="description-item" th:text="${productItem.description}"></p>
+							<a href="#" class="w-100">
+								<div class="imagen-item"></div>
+								<div class="fondo-oscuro">
+										<h5 class="title-item" th:text=" '$' +  ${#numbers.formatDecimal(productItem.price, 0, 'POINT', 2, 'COMMA')}">
+										</h5>
+									<p class="description-item" th:text="${productItem.title}"></p>
+									<p class="description-item-sub" th:text="${productItem.description}"></p>
 								</div>
+								</a>
 							</div>
 						</div>
 					</div>

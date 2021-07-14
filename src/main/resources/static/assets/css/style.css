@@ -2423,11 +2423,13 @@ rotate
 	margin: 10px;
 }
 
+@media (min-width: 200px) {
 .imagen-item { //
-	width: 100px;
+	width: 100%;
 	height: 200px;
 	background: #D3D3D3;
 	text-align: left;
+	border-radius: 15px;
 }
 
 .title-item {
@@ -2442,6 +2444,14 @@ rotate
 	margin-bottom: 15px;
 	font-size: 14px;
 	text-align: left;
+	color: white
+}
+.description-item-sub {
+	font-weight: 500;
+	margin-bottom: 15px;
+	font-size: 10px;
+	text-align: left;
+	color: white
 }
 
 .iconify {
@@ -2465,4 +2475,12 @@ rotate
  }
 .white {
 	color: white;
+}
+
+.fondo-oscuro {
+	background: #1e4356;
+	padding: 9px;
+	width: 100%;
+	border-radius: 15px;
+	margin: 5px 0;
 }
