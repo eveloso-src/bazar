@@ -206,8 +206,11 @@
 							<div class="right">
 								<a href="#"><i class='bx bx-heart'></i></a>
 							</div>
+<!-- 							"@{'/product'(id=${productItem.id})}" -->
 							<div class="row">
-							<a href="#" class="w-100">
+							<a th:href=
+							"@{product/__${productItem.id}__}"
+							 class="w-100">
 								<div class="imagen-item"></div>
 								<div class="fondo-oscuro">
 										<h5 class="title-item" th:text=" '$' +  ${#numbers.formatDecimal(productItem.price, 0, 'POINT', 2, 'COMMA')}">
