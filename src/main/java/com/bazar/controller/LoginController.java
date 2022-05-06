@@ -1,7 +1,5 @@
 package com.bazar.controller;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,8 +16,10 @@ public class LoginController {
 	ProductRepository productRepository;
 
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
-	public String login(Model model, HttpServletRequest request) {
-		model.addAttribute("searchForm", new SearchForm());
+	public String login(Model model) {
+		SearchForm objetoSearch = new SearchForm();
+		objetoSearch.setKeyphrase("zapatillas");
+		model.addAttribute("searchForm", objetoSearch);
 		model.addAttribute("products", productRepository.findAll());
 		return "index";
 	}
